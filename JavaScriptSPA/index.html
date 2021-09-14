@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickstart | MSAL.JS Vanilla JavaScript SPA</title>
+    
+
+    <!-- pegando infos msal -->
+    <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.4.4/js/msal.js" integrity="sha384-fTmwCjhRA6zShZq8Ow5ZkbWwmgp8En46qW6yWpNEkp37MkV50I/V2wjzlEkQ8eWD" crossorigin="anonymous"></script>
+    
+    <!-- msal substituto de cdn -->
+    <script type="text/javascript">
+        if(typeof Msal === 'undefined')document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/lib/1.4.4/js/msal.js' type='text/javascript' %3E%3C/script%3E"));
+    </script>
+
+      <!-- adicionando bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">TESTE</a>
+        <div class="btn-group ml-auto dropleft">
+          <button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Sign In</button>
+          <button type="button" id="signOut" class="btn btn-success d-none" onclick="signOut()">Sign Out</button>
+        </div>
+    </nav>
+
+    <br>
+    <h5 class="card-header text-center">TESTE ANDREY LEMOS</h5>
+    <br>
+    <div class="row" style="margin:auto" >
+    <div id="card-div" class="col-md-3 d-none">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title" id="welcomeMessage">Faça login para ver seus emails</h5>
+        <div id="profile-div"></div>
+        <br>
+        <br>
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+      <div class="col-md-4">
+        <div class="list-group" id="list-tab" role="tablist">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="tab-content" id="nav-tabContent">
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <!-- ordem dos imports é importante -->
+    <script type="text/javascript" src="./authConfig.js"></script>
+    <script type="text/javascript" src="./ui.js"></script>
+    <script type="text/javascript" src="./authPopup.js"></script>
+</body>
+</html>
